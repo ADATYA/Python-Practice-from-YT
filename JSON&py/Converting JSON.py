@@ -1,23 +1,52 @@
-#If you have a json string you can parse it by using the json .loads() method.
+# #If you have a json string you can parse it by using the json .loads() method.
+
+# # import json
+
+# #some JSON:
+# # x='{"cname":"python","fees":3720,"duration":"2 months"}'
+
+# #parrse x:
+# # y=json.loads(x)
+
+# #the result is Python dictionary:
 
 # import json
 
-#some JSON:
-# x='{"cname":"python","fees":3720,"duration":"2 months"}'
+# d ='{"cname":"python","fees":3720,"duration":"2 months"}'
 
-#parrse x:
-# y=json.loads(x)
+# x = json.loads(d)
 
-#the result is Python dictionary:
+# print(type(x))
+# print(x)
 
-import json
+# for a in x:
+#     print(a,x[a])
 
-d ='{"cname":"python","fees":3720,"duration":"2 months"}'
+def twoSum(nums, target):
+    n = len(nums)
+    a = nums.copy()
 
-x = json.loads(d)
+    nums.sort()
 
-print(type(x))
-print(x)
+    l = 0
+    r = n - 1
 
-for a in x:
-    print(a,x[a])
+    while l < r:
+        sum = nums[l] + nums[r]
+
+        if sum == target:
+            break
+        elif sum > target:
+            r -= 1
+        else:
+            l += 1
+
+    v = []
+
+    for i in range(n):
+        if nums[l] == a[i]:
+            v.append(i)
+        elif nums[r] == a[i]:
+            v.append(i)
+
+    return v
